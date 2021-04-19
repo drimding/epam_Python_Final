@@ -8,3 +8,7 @@ before_install:
 install:
   - pip install pipenv
   - pipenv install --dev
+
+script:
+  - pycodestyle src/ --ignore=E722,E501,E402
+  - python wsgi.py
