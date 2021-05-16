@@ -13,6 +13,7 @@ from smartMeter_server_app.service.user_service import UserService
 class AuthRegister(Resource):
     user_schema = UserSchema()
 
+    "testing"
     def post(self):
         if request.json:
             try:
