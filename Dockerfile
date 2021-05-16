@@ -1,7 +1,7 @@
 FROM python:3.9
 
 RUN useradd --create-home userapi
-WORKDIR /epam_Python_Final
+WORKDIR /smartMeter
 
 RUN pip install -U pipenv
 COPY Pipfile .

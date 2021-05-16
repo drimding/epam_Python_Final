@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Sign Up</h3>
+    <div class="box">
+        <form id="register_form">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" id = "email" name="email" placeholder="Email" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large"  type="text" id = "username" name="username" placeholder="Name" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" id = "password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <input type="submit" class="button is-block is-info is-large is-fullwidth"  value="Sign Up">
+        </form>
+    </div>
+</div>
+<script>
+    function submitForm() {
+        var formdata = $("#register_form").serializeArray();
+        var json_data = {};
+        $(formdata ).each(function(index, obj){
+            if (obj.name === 'username'){
+                json_data.username=obj.value
+            }
+            if (obj.name === 'email'){
+                json_data.email=obj.value
+            }
+            if (obj.name === 'password'){
+                json_data.password=obj.value
+            }
+        });
+        json_data =JSON.stringify(json_data)
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('authregister') }}",
+            data: json_data,
+            success: function (data) {
+                alert(JSON.stringify(data));
+            },error: function (data){
+                alert(data.statusText + " " + data.status + " " + data.responseJSON.message)
+            },
+            dataType: "json",
+            contentType: "application/json"
+        })
+    }
+</script>
+{% endblock %}
