@@ -1,10 +1,18 @@
+from flask_jwt_extended import jwt_required
 from smartMeter_server_app import db
-from smartMeter_server_app.service.user_service import UserService
 
 
 class MainService:
 
     @classmethod
-    def get_by_uuid(cls, uuid):
-        user = UserService.get_current_user()
-        return db.session.query(cls).filter_by(user_id=user.id).all()
+    def get_by_uuid(cls, uuid) -> object:
+        return db.session.query(cls).filter_by(uuid=uuid).first()
+
+    @classmethod
+    def delete(cls, uuid):
+        obj = cls.get_by_uuid(uuid)
+        if not obj:
+            return "", 404
+        db.session.delete(obj)
+        db.session.commit()
+        return "", 204

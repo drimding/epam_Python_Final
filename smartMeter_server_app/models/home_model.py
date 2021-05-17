@@ -2,9 +2,10 @@ import uuid
 
 from smartMeter_server_app import db
 from smartMeter_server_app.models.smartMeter_model import SmartMeter
+from smartMeter_server_app.service.home_service import HomeService
 
 
-class Home(db.Model):
+class Home(db.Model, HomeService):
     __tablename__ = 'homes'
     __table_args__ = (db.UniqueConstraint('home_name', 'user_id', name='unique_component_commit'),)
 
@@ -21,7 +22,7 @@ class Home(db.Model):
         self.address = address
 
     def __repr__(self):
-        return f'Home {self.home_name}, {self.address}, {self.uuid}'
+        return f'Home {self.home_name}, {self.address}, {self.uuid}, {self.user_id}'
 
 
 

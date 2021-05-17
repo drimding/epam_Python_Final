@@ -17,6 +17,6 @@ class UserSchema(SQLAlchemyAutoSchema):
 
     class Meta:
         model = User
-        exclude = ('id', 'is_admin', 'homes')
+        exclude = ('id', 'is_admin', )
         load_instance = True
         load_only = ('password',)

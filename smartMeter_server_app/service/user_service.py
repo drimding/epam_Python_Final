@@ -1,4 +1,4 @@
-from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import get_jwt_identity, jwt_required
 from sqlalchemy.exc import IntegrityError, DataError
 
 from smartMeter_server_app import db, login_manager
@@ -34,7 +34,8 @@ class UserService:
         return user
 
     @staticmethod
-    def get_current_user():
+    @jwt_required()
+    def get_current_user() -> User:
         return UserService.get_by_uuid(get_jwt_identity())
 
     @staticmethod

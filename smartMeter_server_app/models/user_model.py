@@ -46,7 +46,7 @@ class User(db.Model, UserMixin):
         return self.uuid
 
     def __repr__(self):
-        return f'User({self.username}, {self.email}, {self.uuid}, {self.homes})'
+        return f'User({self.username}, {self.email}, {self.uuid})'
 
 
 
