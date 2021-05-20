@@ -15,6 +15,7 @@ PyJWT = "*"
 Flask-JWT-Extended = "*"
 cryptography = "*"
 flask-swagger-ui = "*"
+pycodestyle = "*"
 
 [dev-packages]
 pytest = "*"
