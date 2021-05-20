@@ -19,6 +19,7 @@ Flask-JWT-Extended = "*"
 cryptography = "*"
 pycodestyle = "*"
 mysql-connector-python = "*"
+pymysql = "*"
 
 [dev-packages]
 pytest = "*"
