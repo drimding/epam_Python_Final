@@ -1,9 +1,9 @@
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from smartMeter_server_app import db
+from src import db
 import uuid
-from smartMeter_server_app.models.home_model import Home
+from src.models.home_model import Home
 
 
 class User(db.Model, UserMixin):

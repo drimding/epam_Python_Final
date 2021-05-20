@@ -5,15 +5,16 @@ from flask_login import login_required, current_user
 from flask_restful import Resource
 
 
-from smartMeter_server_app.service.user_service import UserService
+from src.service.user_service import UserService
 
 
 class MainPage(Resource):
     def get(self):
         if current_user.is_authenticated:
             return redirect(url_for('personal'))
-        headers = {'Content-Type': 'text/html'}
-        return make_response(render_template('loginPage.html'), 200, headers)
+#        headers = {'Content-Type': 'text/html'}
+#        return make_response(render_template('loginPage.html'), 200, headers)
+        return redirect('/swagger')
 
 
 class Signup(Resource):

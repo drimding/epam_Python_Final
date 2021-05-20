@@ -1,6 +1,6 @@
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
-from smartMeter_server_app.models.smartMeter_model import SmartMeter
+from src.models.smartMeter_model import SmartMeter
 
 
 class SmartMeterSchema(SQLAlchemyAutoSchema):

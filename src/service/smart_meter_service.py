@@ -1,7 +1,7 @@
 from sqlalchemy.exc import IntegrityError
 
-from smartMeter_server_app import db
-from smartMeter_server_app.service.main_service import MainService
+from src import db
+from src.service.main_service import MainService
 
 
 class SmartMeterService(MainService):

@@ -50,8 +50,8 @@ def sql_debug(response):
 
 app.after_request(sql_debug)
 
-from smartMeter_server_app.views import main, api_views
-from smartMeter_server_app.models.user_model import User
-from smartMeter_server_app.models.home_model import Home
-from smartMeter_server_app.models.smartMeter_model import SmartMeter
-from smartMeter_server_app.models.ApplianceMetaData_model import ApplianceMetaData
+from src.views import main, api_views
+from src.models.user_model import User
+from src.models.home_model import Home
+from src.models.smartMeter_model import SmartMeter
+from src.models.ApplianceMetaData_model import ApplianceMetaData

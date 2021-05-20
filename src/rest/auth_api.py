@@ -5,9 +5,9 @@ from flask_restful import Resource
 from marshmallow import ValidationError
 from flask_jwt_extended import create_access_token, unset_jwt_cookies, set_access_cookies
 from flask_login import login_user, login_required, logout_user, current_user
-from smartMeter_server_app import db
-from smartMeter_server_app.schemas.user_schema import UserSchema
-from smartMeter_server_app.service.user_service import UserService
+from src import db
+from src.schemas.user_schema import UserSchema
+from src.service.user_service import UserService
 
 
 class AuthRegister(Resource):

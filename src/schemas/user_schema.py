@@ -1,7 +1,7 @@
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, auto_field
 from marshmallow import ValidationError
 
-from smartMeter_server_app.models.user_model import User
+from src.models.user_model import User
 
 
 # Custom validator

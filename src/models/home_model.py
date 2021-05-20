@@ -1,8 +1,8 @@
 import uuid
 
-from smartMeter_server_app import db
-from smartMeter_server_app.models.smartMeter_model import SmartMeter
-from smartMeter_server_app.service.home_service import HomeService
+from src import db
+from src.models.smartMeter_model import SmartMeter
+from src.service.home_service import HomeService
 
 
 class Home(db.Model, HomeService):

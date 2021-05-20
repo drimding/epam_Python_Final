@@ -1,9 +1,9 @@
 from flask_jwt_extended import jwt_required
 from sqlalchemy.exc import IntegrityError
 
-from smartMeter_server_app import db
+from src import db
 
-from smartMeter_server_app.service.main_service import MainService
+from src.service.main_service import MainService
 
 
 class HomeService(MainService):

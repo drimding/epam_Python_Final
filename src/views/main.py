@@ -1,8 +1,8 @@
 from flask import redirect, url_for
 
-from smartMeter_server_app import api, jwt
-from smartMeter_server_app.rest.auth_api import AuthRegister, AuthLogin, Logout
-from smartMeter_server_app.rest.mainpage_api import MainPage, Signup, Personal
+from src import api, jwt
+from src.rest.auth_api import AuthRegister, AuthLogin, Logout
+from src.rest.mainpage_api import MainPage, Signup, Personal
 
 
 @jwt.expired_token_loader

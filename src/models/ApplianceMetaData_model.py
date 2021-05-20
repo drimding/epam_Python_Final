@@ -2,7 +2,7 @@ import datetime
 
 import uuid
 
-from smartMeter_server_app import db
+from src import db
 
 
 class ApplianceMetaData(db.Model):

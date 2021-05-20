@@ -1,6 +1,6 @@
 import http
 
-from smartMeter_server_app import app
+from src import app
 
 
 def test_index():

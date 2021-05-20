@@ -1,9 +1,9 @@
 from flask_jwt_extended import get_jwt_identity, jwt_required
 from sqlalchemy.exc import IntegrityError, DataError
 
-from smartMeter_server_app import db, login_manager
-from smartMeter_server_app.models.user_model import User
-from smartMeter_server_app.schemas.user_schema import UserSchema
+from src import db, login_manager
+from src.models.user_model import User
+from src.schemas.user_schema import UserSchema
 
 
 class UserService:

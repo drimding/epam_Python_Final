@@ -1,5 +1,5 @@
 from flask_jwt_extended import jwt_required
-from smartMeter_server_app import db
+from src import db
 
 
 class MainService:

@@ -3,10 +3,10 @@ from flask_jwt_extended import jwt_required
 from flask_restful import Resource
 from marshmallow import ValidationError
 
-from smartMeter_server_app import db
-from smartMeter_server_app.models.home_model import Home
-from smartMeter_server_app.models.smartMeter_model import SmartMeter
-from smartMeter_server_app.schemas.smartMeter_schema import SmartMeterSchema
+from src import db
+from src.models.home_model import Home
+from src.models.smartMeter_model import SmartMeter
+from src.schemas.smartMeter_schema import SmartMeterSchema
 
 
 class SmartMeterApi(Resource):

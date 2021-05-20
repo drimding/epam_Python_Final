@@ -1,8 +1,8 @@
 import uuid
 
-from smartMeter_server_app import db
-from smartMeter_server_app.models.ApplianceMetaData_model import ApplianceMetaData
-from smartMeter_server_app.service.smart_meter_service import SmartMeterService
+from src import db
+from src.models.ApplianceMetaData_model import ApplianceMetaData
+from src.service.smart_meter_service import SmartMeterService
 
 
 class SmartMeter(db.Model, SmartMeterService):
