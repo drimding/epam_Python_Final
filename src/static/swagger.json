@@ -10,7 +10,6 @@ info:
   license:
     name: "License GPL v3"
     url: "https://en.wikipedia.org/wiki/GNU_General_Public_License"
-host: "localhost:5000"
 basePath: "/"
 tags:
 - name: "user"
