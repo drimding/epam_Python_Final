@@ -5,16 +5,18 @@ name = "pypi"
 
 [packages]
 Flask = "*"
-Flask-Migrate = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 Flask-RESTful = "*"
+flask-swagger-ui = "*"
+marshmallow-sqlalchemy = "*"
+flask-debugtoolbar = "*"
+Flask-Login = "*"
 coverage = "*"
 gunicorn = "*"
-marshmallow-sqlalchemy = "*"
-Flask-Login = "*"
 PyJWT = "*"
 Flask-JWT-Extended = "*"
 cryptography = "*"
-flask-swagger-ui = "*"
 pycodestyle = "*"
 
 [dev-packages]
