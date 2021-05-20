@@ -12,7 +12,7 @@ gunicorn = "*"
 marshmallow-sqlalchemy = "*"
 Flask-Login = "*"
 PyJWT = "*"
-flask-jwt-extended = "*"
+Flask-JWT-Extended = "*"
 cryptography = "*"
 flask-swagger-ui = "*"
 

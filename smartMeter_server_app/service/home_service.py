@@ -14,7 +14,6 @@ class HomeService(MainService):
     def add(self, user):
         try:
             self.user_id = user.id
-            print(self)
             db.session.add(self)
             db.session.commit()
         except IntegrityError as e:

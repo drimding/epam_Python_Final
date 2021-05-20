@@ -43,7 +43,7 @@ class AuthLogin(Resource):
             if not user or not user.check_password(json['password']):
                 return "no authentication", 401
             jwt_token = create_access_token(identity=user.uuid, expires_delta=timedelta(hours=2))
-            return {"jwt_token": jwt_token}, 200
+            return {"jwt_token": "Bearer "+jwt_token}, 200
         else:
             if not request.form.get('password') or not request.form.get('username'):
                 return "wrong input", 401
