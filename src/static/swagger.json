@@ -380,8 +380,6 @@ definitions:
     properties:
       meter_name:
         type: "string"
-      home_uuid:
-        type: "string"
   User:
     type: "object"
     properties:

@@ -11,6 +11,8 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.getenv('SECRET_KEY') or 'secret-key-goes-here'
 
+    PROPAGATE_EXCEPTIONS = True
     #JWT_TOKEN_LOCATION = 'cookies'
+
 
 
