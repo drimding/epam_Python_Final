@@ -23,7 +23,3 @@ class Home(db.Model, HomeService):
 
     def __repr__(self):
         return f'Home({self.home_name}, {self.address}, {self.uuid}, {self.user_id})'
-
-
-
-

@@ -1,4 +1,3 @@
-from flask_jwt_extended import jwt_required
 from sqlalchemy.exc import IntegrityError
 
 from src import db
@@ -18,7 +17,7 @@ class HomeService(MainService):
             db.session.commit()
         except IntegrityError as e:
             return {"message": str(e.orig)}, 400
-        return 201
+        return self
 
     def set(self):
         db.session.add(self)

@@ -31,7 +31,7 @@ class SmartMeterApi(Resource):
         except ValidationError as e:
             return {"message": str(e)}, 400
         print(smart_meter)
-        return smart_meter.add(home.id)
+        return self.smart_meter_schema.dump(smart_meter.add(home.id))
 
     def put(self):
         return "PUT", 200
@@ -41,4 +41,3 @@ class SmartMeterApi(Resource):
         if not home:
             return "", 404
         return SmartMeter.delete(meter_uuid)
-

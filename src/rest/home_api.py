@@ -1,5 +1,5 @@
 from flask import request
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required
 from flask_restful import Resource
 from marshmallow import ValidationError
 
@@ -26,7 +26,8 @@ class HomeApi(Resource):
             home = self.homes_schema.load(request.json, session=db.session)
         except ValidationError as e:
             return {"message": str(e)}, 400
-        return home.add(UserService.get_current_user())
+        response_home_added = home.add(UserService.get_current_user())
+        return self.homes_schema.dump(response_home_added), 201
 
     @jwt_required()
     def put(self, uuid=None):

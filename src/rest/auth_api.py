@@ -4,7 +4,7 @@ from flask import request, redirect, url_for, make_response
 from flask_restful import Resource
 from marshmallow import ValidationError
 from flask_jwt_extended import create_access_token, unset_jwt_cookies, set_access_cookies
-from flask_login import login_user, login_required, logout_user, current_user
+from flask_login import login_user, login_required, logout_user
 from src import db
 from src.schemas.user_schema import UserSchema
 from src.service.user_service import UserService
@@ -36,14 +36,15 @@ class AuthRegister(Resource):
 class AuthLogin(Resource):
     user_schema = UserSchema()
 
-    def post(self):
+    @staticmethod
+    def post():
         if request.json:
             json = request.json
             user = UserService.get_bu_username(json['username'])
             if not user or not user.check_password(json['password']):
                 return "no authentication", 401
             jwt_token = create_access_token(identity=user.uuid, expires_delta=timedelta(hours=2))
-            return {"jwt_token": "Bearer "+jwt_token}, 200
+            return {"jwt_token": "Bearer " + jwt_token}, 200
         else:
             if not request.form.get('password') or not request.form.get('username'):
                 return "wrong input", 401

@@ -9,11 +9,8 @@ from flask_swagger_ui import get_swaggerui_blueprint
 import config
 
 
-#bp = Blueprint('auth', __name__)
-
 app = Flask(__name__)
 app.config.from_object(config.Config)
-#app.register_blueprint(bp)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 api = Api(app)

@@ -12,4 +12,4 @@ class SmartMeterService(MainService):
             db.session.commit()
         except IntegrityError as e:
             return {"message": str(e.orig)}, 400
-        return 201
+        return self
