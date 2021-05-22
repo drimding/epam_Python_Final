@@ -2,12 +2,17 @@ language: python
 python:
   - "3.9"
 
+services:
+  - mysql
+
 before_install:
   - pip install pycodestyle
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS develop;'
 
 install:
   - pip install pipenv
   - pipenv install --dev
+  - flask upgrade
 
 script:
   - python -m pytest tests/
