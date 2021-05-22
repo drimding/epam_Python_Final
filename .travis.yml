@@ -12,7 +12,7 @@ before_install:
 install:
   - pip install pipenv
   - pipenv install --dev
-  - flask upgrade
+  - flask db upgrade
 
 script:
   - python -m pytest tests/
