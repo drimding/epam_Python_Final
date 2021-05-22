@@ -21,3 +21,6 @@ script:
   - coverage report -m
   - pycodestyle src/ --ignore=E722,E501,E402
 
+notifications:
+  webhooks: https://coveralls.io/webhook
+
