@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 version: 0.2
 phases:
+=======
+version: 0.2phases:
+>>>>>>> 1848e6b2d5e1c0974933e25f32618fb8895232cf
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
