@@ -8,10 +8,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t smart_meter .
-      - docker tag smart_meter:latest 835894273863.dkr.ecr.us-east-2.amazonaws.com/smart_meter:latest
+      - docker build -t smart_docker_repo .
+      - docker tag smart_docker_repo:latest 835894273863.dkr.ecr.us-east-2.amazonaws.com/smart_docker_repo:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 835894273863.dkr.ecr.us-east-2.amazonaws.com/smart_meter:latest
+      - docker push 835894273863.dkr.ecr.us-east-2.amazonaws.com/smart_docker_repo:latest
