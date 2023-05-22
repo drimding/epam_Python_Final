@@ -8,8 +8,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t  web:1 .
-      - docker tag web:1 835894273863.dkr.ecr.eu-north-1.amazonaws.com/smart_meter
+      - docker build -t smart_meter .
+      - docker tag smart_meter:1 835894273863.dkr.ecr.eu-north-1.amazonaws.com/smart_meter
   post_build:
     commands:
       - echo Build completed on `date`
