@@ -11,5 +11,5 @@ COPY ./ .
 RUN chown -R userapi:userapi ./
 USER userapi
 
-EXPOSE 80
-CMD gunicorn --bind 0.0.0.0:80 wsgi:app
+EXPOSE 8080
+CMD gunicorn --bind 0.0.0.0:8080 wsgi:app
